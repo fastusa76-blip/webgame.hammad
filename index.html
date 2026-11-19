@@ -1,57 +1,67 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
-  <meta name="theme-color" content="#07152e">
-  <meta name="description" content="Bee Defender — a colorful mobile-first arcade shooter.">
-  <title>Bee Defender — Arcade Game</title>
-  <link rel="stylesheet" href="styles.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta name="theme-color" content="#07152e">
+<meta name="description" content="Bee Defender — a mobile-first arcade airplane shooter.">
+<title>Bee Defender — Sky Battle</title>
+<style>
+:root{color-scheme:dark;--bg:#071329;--panel:#0d2040;--cyan:#64e7f5;--gold:#ffd66b;--muted:#9bb0ce}
+*{box-sizing:border-box}body{margin:0;min-height:100vh;background:radial-gradient(ellipse at 50% 0%,#173b68 0,#091a35 44%,#050d1c 100%);font-family:Inter,ui-sans-serif,system-ui,Segoe UI,sans-serif;color:#f5f8ff;padding:20px 14px 30px}.app{width:min(100%,760px);margin:auto}.topbar{display:flex;align-items:center;justify-content:space-between;margin:0 0 24px}.brand{display:flex;gap:10px;align-items:center;color:white;text-decoration:none;font-weight:900;letter-spacing:1.5px}.brand-mark{display:grid;place-items:center;width:35px;height:35px;border:1px solid #64e7f5;border-radius:12px;color:#64e7f5;font-size:22px}.brand-accent{color:var(--cyan);margin-left:4px}.top-actions{display:flex;gap:12px;align-items:center}.status{font-size:10px;letter-spacing:1.3px;color:#a9c5dd}.status i,.dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:#5ee6a8;margin-right:6px;box-shadow:0 0 10px #5ee6a8}.sound-btn,.pause-btn{background:#142b4d;border:1px solid #29476c;color:#dffaff;border-radius:10px;padding:9px 12px;cursor:pointer}.intro{text-align:center;margin-bottom:20px}.eyebrow{font-size:10px;letter-spacing:3px;color:var(--cyan);font-weight:800}.intro h1{font-size:clamp(32px,7vw,52px);line-height:1.08;margin:9px 0 8px;letter-spacing:-1.8px}.intro h1 em{font-style:normal;color:var(--gold)}.intro p{color:var(--muted);font-size:14px;margin:0}.game-shell{overflow:hidden;border:1px solid #28486e;border-radius:20px;background:#091a32;box-shadow:0 24px 70px #0008,0 0 40px #2ac8ee12}.hud{height:66px;display:grid;grid-template-columns:1fr 1fr 1fr;align-items:center;padding:0 17px;background:linear-gradient(90deg,#10284a,#10203c);border-bottom:1px solid #29476b}.hud-stat{display:flex;flex-direction:column;gap:3px}.hud-stat span{font-size:9px;letter-spacing:1.6px;color:#92abc9}.hud-stat strong{font-size:17px;letter-spacing:1px;font-variant-numeric:tabular-nums}.hud-stat.right{text-align:right}.hud-stat.right strong{color:#ff8395;letter-spacing:3px}.hud-center{text-align:center}.level-pill{display:inline-block;background:#193d60;border:1px solid #376487;border-radius:30px;padding:7px 12px;font-size:10px;letter-spacing:1px;color:#bfefff}.level-pill b{color:var(--gold)}.canvas-wrap{position:relative;width:100%;background:#07152b;line-height:0;touch-action:none}canvas{display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:contain;touch-action:none}.overlay{position:absolute;inset:0;display:grid;place-items:center;padding:18px;background:linear-gradient(#06152bbd,#07162ddd);line-height:normal}.overlay.hidden{display:none}.overlay-card{text-align:center;width:min(100%,390px);padding:25px 20px;border:1px solid #3b6484;border-radius:20px;background:#0b2140eF;box-shadow:0 20px 60px #0008}.hero-icon{font-size:48px;filter:drop-shadow(0 0 15px #ffd66b66)}.mini-label{font-size:10px;letter-spacing:3px;color:var(--cyan);font-weight:800;margin-top:8px}.overlay h2{font-size:clamp(22px,5vw,30px);margin:10px 0}.overlay p{font-size:13px;color:#b0c3dc;line-height:1.5;margin:0 auto 18px;max-width:280px}.primary-btn{border:0;border-radius:12px;padding:14px 22px;background:linear-gradient(100deg,#53dce9,#8bf0d2);color:#052039;font-weight:900;letter-spacing:1px;cursor:pointer;box-shadow:0 8px 24px #53dce944}.primary-btn span{margin-left:12px}.overlay small{display:block;color:#819dbd;font-size:9px;letter-spacing:.7px;margin-top:18px;line-height:1.6}.mobile-hint{display:none;position:absolute;bottom:10px;left:0;right:0;text-align:center;color:#b9d8ed;font-size:9px;letter-spacing:1.5px;text-shadow:0 1px 4px #000}.game-footer{min-height:52px;padding:10px 16px;display:flex;align-items:center;justify-content:space-between;gap:8px;background:#0c1d37;color:#92abc9;font-size:9px;letter-spacing:1px}.game-footer b{color:#fff;margin-left:5px}.dot-green{background:#5ee6a8}.pause-btn{font-size:10px;padding:8px 11px}.pause-btn:disabled{opacity:.4;cursor:not-allowed}.feature-row{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:15px}.feature-row article{display:flex;align-items:center;gap:10px;padding:13px 11px;border:1px solid #1e3a5d;background:#0c1d36a8;border-radius:13px;min-width:0}.feature-icon{font-size:21px}.feature-row b,.feature-row small{display:block}.feature-row b{font-size:11px}.feature-row small{font-size:9px;color:#91a9c7;margin-top:4px;line-height:1.3}.site-footer{text-align:center;color:#597493;font-size:9px;letter-spacing:2px;margin-top:24px}.site-footer span{color:var(--cyan);padding:0 5px}
+@media(max-width:520px){body{padding:13px 9px 22px}.topbar{margin-bottom:18px}.status{font-size:8px}.intro{margin-bottom:14px}.intro p{font-size:12px}.hud{height:58px;padding:0 11px}.hud-stat span{font-size:8px}.hud-stat strong{font-size:14px}.level-pill{font-size:9px;padding:6px 8px}.game-shell{border-radius:15px}.game-footer{padding:9px 10px;font-size:8px}.pause-btn{font-size:9px;padding:7px 8px}.feature-row{gap:6px}.feature-row article{padding:10px 7px;gap:6px}.feature-icon{font-size:17px}.feature-row b{font-size:10px}.feature-row small{font-size:8px}.mobile-hint{display:block}}
+</style>
 </head>
 <body>
-  <main class="app">
-    <header class="topbar">
-      <a class="brand" href="#" aria-label="Bee Defender home"><span class="brand-mark">✦</span><span>BEE<span class="brand-accent">DEFENDER</span></span></a>
-      <div class="top-actions"><span class="status"><i></i> ARCADE MODE</span><button class="sound-btn" id="soundBtn" aria-label="Toggle sound">♫</button></div>
-    </header>
-    <section class="intro">
-      <div class="eyebrow">✧ SKY PATROL · SECTOR 01</div>
-      <h1>Defend the <em>Sky!</em></h1>
-      <p>Take control of your little fighter and stop the buzzing invasion.</p>
-    </section>
-    <section class="game-shell" aria-label="Bee Defender game">
-      <div class="hud">
-        <div class="hud-stat"><span>SCORE</span><strong id="score">000000</strong></div>
-        <div class="hud-center"><span class="level-pill">✦ LEVEL <b id="level">01</b></span></div>
-        <div class="hud-stat right"><span>LIVES</span><strong id="lives">♥ ♥ ♥</strong></div>
-      </div>
-      <div class="canvas-wrap">
-        <canvas id="game" width="720" height="900" aria-label="Game area. Move your plane and shoot the bees."></canvas>
-        <div class="overlay" id="overlay">
-          <div class="overlay-card">
-            <div class="hero-icon">🐝</div>
-            <div class="mini-label">READY, PILOT?</div>
-            <h2 id="overlayTitle">The sky needs you!</h2>
-            <p id="overlayText">Move your plane, dodge the swarm and clear every wave.</p>
-            <button class="primary-btn" id="startBtn">START MISSION <span>→</span></button>
-            <small>DESKTOP: WASD / ARROWS + SPACE &nbsp;·&nbsp; MOBILE: DRAG + AUTO FIRE</small>
-          </div>
-        </div>
-        <div class="mobile-hint" id="mobileHint">DRAG TO MOVE · AUTO FIRE ON</div>
-      </div>
-      <footer class="game-footer">
-        <span><i class="dot dot-green"></i> SYSTEM ONLINE</span>
-        <span>HIGH SCORE <b id="highScore">000000</b></span>
-        <button id="pauseBtn" class="pause-btn" disabled>Ⅱ PAUSE</button>
-      </footer>
-    </section>
-    <section class="feature-row">
-      <article><span class="feature-icon">🎯</span><div><b>Stay sharp</b><small>Bees get faster every wave</small></div></article>
-      <article><span class="feature-icon">⚡</span><div><b>Power up</b><small>Collect boosts and survive</small></div></article>
-      <article><span class="feature-icon">📱</span><div><b>Play anywhere</b><small>Built for touch and keyboard</small></div></article>
-    </section>
-    <footer class="site-footer">BEE DEFENDER <span>·</span> A LITTLE ARCADE ADVENTURE</footer>
-  </main>
-  <script src="game.js"></script>
+<main class="app">
+<header class="topbar"><a class="brand" href="#" aria-label="Bee Defender home"><span class="brand-mark">✦</span><span>BEE<span class="brand-accent">DEFENDER</span></span></a><div class="top-actions"><span class="status"><i></i> ARCADE MODE</span><button class="sound-btn" id="soundBtn" aria-label="Toggle sound" title="Toggle sound">♫</button></div></header>
+<section class="intro"><div class="eyebrow">✧ SKY PATROL · SECTOR 01</div><h1>Defend the <em>Sky!</em></h1><p>Take control of your little fighter and stop the buzzing invasion.</p></section>
+<section class="game-shell" aria-label="Bee Defender game">
+<div class="hud"><div class="hud-stat"><span>SCORE</span><strong id="score">000000</strong></div><div class="hud-center"><span class="level-pill">✦ LEVEL <b id="level">01</b></span></div><div class="hud-stat right"><span>LIVES</span><strong id="lives">♥ ♥ ♥</strong></div></div>
+<div class="canvas-wrap"><canvas id="game" width="720" height="900" aria-label="Move your plane and shoot the bees"></canvas><div class="overlay" id="overlay"><div class="overlay-card"><div class="hero-icon">🐝</div><div class="mini-label">READY, PILOT?</div><h2 id="overlayTitle">The sky needs you!</h2><p id="overlayText">Move your plane, dodge the swarm and clear every wave.</p><button class="primary-btn" id="startBtn">START MISSION <span>→</span></button><small>DESKTOP: WASD / ARROWS · MOBILE: DRAG TO MOVE · AUTO FIRE</small></div></div><div class="mobile-hint">DRAG TO MOVE · AUTO FIRE ON</div></div>
+<footer class="game-footer"><span><i class="dot dot-green"></i>SYSTEM ONLINE</span><span>HIGH SCORE <b id="highScore">000000</b></span><button id="pauseBtn" class="pause-btn" disabled>Ⅱ PAUSE</button></footer></section>
+<section class="feature-row"><article><span class="feature-icon">🎯</span><div><b>Stay sharp</b><small>Bees get faster every wave</small></div></article><article><span class="feature-icon">⚡</span><div><b>Keep firing</b><small>Clear the swarm to level up</small></div></article><article><span class="feature-icon">📱</span><div><b>Play anywhere</b><small>Touch and keyboard controls</small></div></article></section>
+<footer class="site-footer">BEE DEFENDER <span>·</span> A LITTLE ARCADE ADVENTURE</footer>
+</main>
+<script>
+(()=>{
+'use strict';
+const canvas=document.getElementById('game'),ctx=canvas.getContext('2d'),W=canvas.width,H=canvas.height;
+const $=id=>document.getElementById(id);
+const scoreEl=$('score'),levelEl=$('level'),livesEl=$('lives'),highEl=$('highScore'),overlay=$('overlay'),startBtn=$('startBtn'),pauseBtn=$('pauseBtn');
+let state='ready',score=0,lives=3,level=1,frame=0,last=0,spawnTimer=0,shotTimer=0,player,bullets=[],bees=[],particles=[],stars=[],keys={},pointer=null,high=0,audioOn=false,audioCtx=null;
+try{high=Number(localStorage.getItem('beeDefenderHigh')||0)}catch(e){} highEl.textContent=fmt(high);
+function fmt(n){return String(n).padStart(6,'0')}
+function reset(){score=0;lives=3;level=1;frame=0;spawnTimer=0;shotTimer=0;bullets=[];bees=[];particles=[];player={x:W/2,y:H-100,targetX:W/2,targetY:H-100,invuln:0};stars=Array.from({length:85},()=>({x:Math.random()*W,y:Math.random()*H,s:.5+Math.random()*2,v:.5+Math.random()*1.8}));updateHud()}
+function updateHud(){scoreEl.textContent=fmt(score);levelEl.textContent=String(level).padStart(2,'0');livesEl.textContent=Array.from({length:3},(_,i)=>i<lives?'♥':'♡').join(' ');highEl.textContent=fmt(high)}
+function beep(freq=500,dur=.06){if(!audioOn)return;try{audioCtx=audioCtx||new(window.AudioContext||window.webkitAudioContext)();let o=audioCtx.createOscillator(),g=audioCtx.createGain();o.type='sine';o.frequency.value=freq;g.gain.value=.035;o.connect(g);g.connect(audioCtx.destination);o.start();g.gain.exponentialRampToValueAtTime(.001,audioCtx.currentTime+dur);o.stop(audioCtx.currentTime+dur)}catch(e){}}
+function start(){reset();state='playing';overlay.classList.add('hidden');pauseBtn.disabled=false;pauseBtn.textContent='Ⅱ PAUSE';last=performance.now();requestAnimationFrame(loop)}
+function end(){state='over';pauseBtn.disabled=true;overlay.classList.remove('hidden');$('overlayTitle').textContent='Mission complete!';$('overlayText').textContent='Your score: '+score+'. The swarm will return — ready for another flight?';startBtn.innerHTML='PLAY AGAIN <span>↻</span>';beep(180,.25)}
+function togglePause(){if(state==='playing'){state='paused';pauseBtn.textContent='▶ RESUME';overlay.classList.remove('hidden');$('overlayTitle').textContent='Mission paused';$('overlayText').textContent='Take a breath, pilot. The swarm is waiting.';startBtn.textContent='RESUME MISSION →'}else if(state==='paused'){state='playing';overlay.classList.add('hidden');pauseBtn.textContent='Ⅱ PAUSE';last=performance.now();requestAnimationFrame(loop)}}
+function spawnBee(){const tank=Math.random()<Math.min(.12+level*.015,.28);bees.push({x:45+Math.random()*(W-90),y:-35,r:tank?26:20,hp:tank?3:1,max:tank?3:1,v:1.25+level*.22+Math.random()*.7,phase:Math.random()*6.28,amp:18+Math.random()*32,tank})}
+function burst(x,y,color,n=9){for(let i=0;i<n;i++){let a=Math.random()*Math.PI*2,s=1+Math.random()*5;particles.push({x,y,vx:Math.cos(a)*s,vy:Math.sin(a)*s,life:25+Math.random()*20,max:45,color,size:2+Math.random()*4})}}
+function hitBee(b){b.hp--;burst(b.x,b.y,b.tank?'#ffad54':'#ffe17a',5);if(b.hp<=0){score+=b.tank?35:10;bees.splice(bees.indexOf(b),1);burst(b.x,b.y,'#ffd66b',14);beep(620,.04);if(score>=level*180){level++;beep(850,.12)}updateHud()}}
+function loseLife(){if(player.invuln>0)return;lives--;player.invuln=100;burst(player.x,player.y,'#6ce8f4',20);beep(150,.18);updateHud();if(lives<=0)end()}
+function drawPlane(){ctx.save();ctx.translate(player.x,player.y);ctx.shadowColor='#4de7f5';ctx.shadowBlur=22;ctx.fillStyle='#64e7f5';ctx.beginPath();ctx.moveTo(0,-39);ctx.lineTo(12,-7);ctx.lineTo(43,12);ctx.lineTo(39,23);ctx.lineTo(9,17);ctx.lineTo(7,34);ctx.lineTo(19,42);ctx.lineTo(0,38);ctx.lineTo(-19,42);ctx.lineTo(-7,34);ctx.lineTo(-9,17);ctx.lineTo(-39,23);ctx.lineTo(-43,12);ctx.lineTo(-12,-7);ctx.closePath();ctx.fill();ctx.shadowBlur=0;ctx.fillStyle='#fff';ctx.beginPath();ctx.ellipse(0,-8,6,15,0,0,Math.PI*2);ctx.fill();ctx.fillStyle='#ffd66b';ctx.beginPath();ctx.moveTo(-5,29);ctx.lineTo(0,48+Math.random()*7);ctx.lineTo(5,29);ctx.fill();ctx.restore()}
+function drawBee(b){ctx.save();ctx.translate(b.x,b.y);ctx.rotate(Math.sin(frame*.06+b.phase)*.09);ctx.shadowColor='#ffd66b';ctx.shadowBlur=12;ctx.fillStyle='#fff4cf';ctx.globalAlpha=.8;ctx.beginPath();ctx.ellipse(-11,-15,10,7,Math.sin(frame*.2)*.4,0,Math.PI*2);ctx.ellipse(11,-15,10,7,-Math.sin(frame*.2)*.4,0,Math.PI*2);ctx.fill();ctx.globalAlpha=1;ctx.fillStyle=b.tank?'#e99b37':'#ffd34f';ctx.beginPath();ctx.ellipse(0,0,b.r,b.r*.78,0,0,Math.PI*2);ctx.fill();ctx.shadowBlur=0;ctx.strokeStyle='#392b22';ctx.lineWidth=b.tank?8:6;for(let x=-8;x<=8;x+=16){ctx.beginPath();ctx.moveTo(x,-b.r*.65);ctx.lineTo(x,b.r*.65);ctx.stroke()}ctx.fillStyle='#1c2534';ctx.beginPath();ctx.arc(-7,-3,2.7,0,Math.PI*2);ctx.arc(7,-3,2.7,0,Math.PI*2);ctx.fill();ctx.strokeStyle='#392b22';ctx.lineWidth=2;ctx.beginPath();ctx.moveTo(-5,-b.r*.7);ctx.lineTo(-9,-b.r-7);ctx.moveTo(5,-b.r*.7);ctx.lineTo(9,-b.r-7);ctx.stroke();if(b.tank){ctx.fillStyle='#fff';ctx.font='bold 13px sans-serif';ctx.textAlign='center';ctx.fillText(b.hp+'/'+b.max,0,4)}ctx.restore()}
+function background(dt){ctx.fillStyle='#07152b';ctx.fillRect(0,0,W,H);let g=ctx.createRadialGradient(W/2,H*.45,20,W/2,H*.45,H*.8);g.addColorStop(0,'#12325a55');g.addColorStop(1,'#06132900');ctx.fillStyle=g;ctx.fillRect(0,0,W,H);for(let s of stars){s.y+=s.v*dt*.06;if(s.y>H){s.y=0;s.x=Math.random()*W}ctx.fillStyle='rgba(190,225,255,'+(.25+s.s*.2)+')';ctx.fillRect(s.x,s.y,s.s,s.s*2)}}
+function draw(){background(16);bees.forEach(drawBee);ctx.save();for(let b of bullets){ctx.shadowColor='#6df5ff';ctx.shadowBlur=15;ctx.fillStyle='#b9fbff';ctx.fillRect(b.x-3,b.y-12,6,18)}ctx.restore();particles.forEach(p=>{ctx.globalAlpha=Math.max(0,p.life/p.max);ctx.fillStyle=p.color;ctx.fillRect(p.x,p.y,p.size,p.size)});ctx.globalAlpha=1;if(player&&(player.invuln<=0||Math.floor(frame/5)%2===0))drawPlane();if(state==='ready'){ctx.fillStyle='#9bbbd8';ctx.font='18px sans-serif';ctx.textAlign='center';ctx.fillText('YOUR FIGHT STARTS HERE',W/2,H-35)}}
+function loop(now){if(state!=='playing')return;let dt=Math.min(32,now-last||16);last=now;frame++;let step=dt/16.67;
+if(keys.ArrowLeft||keys.a)player.targetX-=7*step;if(keys.ArrowRight||keys.d)player.targetX+=7*step;if(keys.ArrowUp||keys.w)player.targetY-=7*step;if(keys.ArrowDown||keys.s)player.targetY+=7*step;
+if(pointer){player.targetX=pointer.x;player.targetY=pointer.y}
+player.targetX=Math.max(38,Math.min(W-38,player.targetX));player.targetY=Math.max(H*.55,Math.min(H-55,player.targetY));player.x+=(player.targetX-player.x)*.24;player.y+=(player.targetY-player.y)*.24;if(player.invuln>0)player.invuln-=step;
+shotTimer+=dt;if(shotTimer>175){shotTimer=0;bullets.push({x:player.x-12,y:player.y-25},{x:player.x+12,y:player.y-25});beep(950,.025)}
+spawnTimer+=dt;if(spawnTimer>Math.max(260,850-level*35)){spawnTimer=0;spawnBee();if(level>2&&Math.random()<.28)spawnBee()}
+for(let b of bullets)b.y-=12*step;bullets=bullets.filter(b=>b.y>-20);
+for(let b of bees){b.y+=b.v*step;b.x+=Math.sin(frame*.035+b.phase)*.8*step;if(b.y>H+30){bees.splice(bees.indexOf(b),1);loseLife();continue}for(let shot of bullets){if(Math.hypot(b.x-shot.x,b.y-shot.y)<b.r+8){bullets.splice(bullets.indexOf(shot),1);hitBee(b);break}}if(bees.includes(b)&&Math.hypot(b.x-player.x,b.y-player.y)<b.r+24) {bees.splice(bees.indexOf(b),1);burst(b.x,b.y,'#ffd66b',12);loseLife()}}
+for(let p of particles){p.x+=p.vx*step;p.y+=p.vy*step;p.life-=step}particles=particles.filter(p=>p.life>0);draw();if(state==='playing')requestAnimationFrame(loop)}
+function pos(e){const r=canvas.getBoundingClientRect();return{x:(e.clientX-r.left)*W/r.width,y:(e.clientY-r.top)*H/r.height}}
+canvas.addEventListener('pointerdown',e=>{pointer=pos(e);canvas.setPointerCapture(e.pointerId)});canvas.addEventListener('pointermove',e=>{if(e.buttons||e.pointerType==='touch')pointer=pos(e)});canvas.addEventListener('pointerup',()=>{pointer=null});canvas.addEventListener('pointercancel',()=>{pointer=null});
+window.addEventListener('keydown',e=>{if(['ArrowUp','ArrowDown','ArrowLeft','ArrowRight',' '].includes(e.key))e.preventDefault();keys[e.key]=true;if(e.key==='Escape'||e.key.toLowerCase()==='p')togglePause()});window.addEventListener('keyup',e=>keys[e.key]=false);
+startBtn.addEventListener('click',()=>{if(state==='paused'){togglePause();return}start()});pauseBtn.addEventListener('click',togglePause);
+$('soundBtn').addEventListener('click',()=>{audioOn=!audioOn;$('soundBtn').textContent=audioOn?'♫':'♪';$('soundBtn').style.color=audioOn?'#64e7f5':'#dffaff';if(audioOn)beep(700,.08)});
+reset();draw();
+})();
+</script>
 </body>
 </html>
