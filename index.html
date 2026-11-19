@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+  <meta name="theme-color" content="#07152e">
+  <meta name="description" content="Bee Defender — a colorful mobile-first arcade shooter.">
+  <title>Bee Defender — Arcade Game</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Bee Defender home"><span class="brand-mark">✦</span><span>BEE<span class="brand-accent">DEFENDER</span></span></a>
+      <div class="top-actions"><span class="status"><i></i> ARCADE MODE</span><button class="sound-btn" id="soundBtn" aria-label="Toggle sound">♫</button></div>
+    </header>
+    <section class="intro">
+      <div class="eyebrow">✧ SKY PATROL · SECTOR 01</div>
+      <h1>Defend the <em>Sky!</em></h1>
+      <p>Take control of your little fighter and stop the buzzing invasion.</p>
+    </section>
+    <section class="game-shell" aria-label="Bee Defender game">
+      <div class="hud">
+        <div class="hud-stat"><span>SCORE</span><strong id="score">000000</strong></div>
+        <div class="hud-center"><span class="level-pill">✦ LEVEL <b id="level">01</b></span></div>
+        <div class="hud-stat right"><span>LIVES</span><strong id="lives">♥ ♥ ♥</strong></div>
+      </div>
+      <div class="canvas-wrap">
+        <canvas id="game" width="720" height="900" aria-label="Game area. Move your plane and shoot the bees."></canvas>
+        <div class="overlay" id="overlay">
+          <div class="overlay-card">
+            <div class="hero-icon">🐝</div>
+            <div class="mini-label">READY, PILOT?</div>
+            <h2 id="overlayTitle">The sky needs you!</h2>
+            <p id="overlayText">Move your plane, dodge the swarm and clear every wave.</p>
+            <button class="primary-btn" id="startBtn">START MISSION <span>→</span></button>
+            <small>DESKTOP: WASD / ARROWS + SPACE &nbsp;·&nbsp; MOBILE: DRAG + AUTO FIRE</small>
+          </div>
+        </div>
+        <div class="mobile-hint" id="mobileHint">DRAG TO MOVE · AUTO FIRE ON</div>
+      </div>
+      <footer class="game-footer">
+        <span><i class="dot dot-green"></i> SYSTEM ONLINE</span>
+        <span>HIGH SCORE <b id="highScore">000000</b></span>
+        <button id="pauseBtn" class="pause-btn" disabled>Ⅱ PAUSE</button>
+      </footer>
+    </section>
+    <section class="feature-row">
+      <article><span class="feature-icon">🎯</span><div><b>Stay sharp</b><small>Bees get faster every wave</small></div></article>
+      <article><span class="feature-icon">⚡</span><div><b>Power up</b><small>Collect boosts and survive</small></div></article>
+      <article><span class="feature-icon">📱</span><div><b>Play anywhere</b><small>Built for touch and keyboard</small></div></article>
+    </section>
+    <footer class="site-footer">BEE DEFENDER <span>·</span> A LITTLE ARCADE ADVENTURE</footer>
+  </main>
+  <script src="game.js"></script>
+</body>
+</html>
